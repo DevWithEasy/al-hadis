@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "SolaimanLipi";
+    src: url('./SolaimanLipi.ttf');
+}
+
+body {
+    @apply font-SolaimanLipi bg-gradient-to-r from-[#ebf5f0] to-[#e7f7f0]
+}
+
+/* width */
+::-webkit-scrollbar {
+    @apply w-2
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    @apply bg-[#e7f7f0]
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    @apply bg-[#aee7cf] rounded-full
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#3ba17d]
+}
