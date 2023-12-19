@@ -63,7 +63,7 @@ const ChaptersList = ({name,book}) => {
                                     <Link
                                     to={`/${name}/${chapter?.chapter_id}`}
                                         key={chapter._id}
-                                        className="w-full p-5 group cursor-pointer bg-white hover:bg-green-100 flex justify-between items-center space-x-2 border-b-[0.5px] border-gray-100 hover:rounded-2xl transition-all duration-500"
+                                        className="w-full p-5 group cursor-pointer bg-white hover:bg-green-100 flex justify-between items-center space-x-2 md:space-x-6 border-b-[0.5px] border-gray-100 hover:rounded-2xl transition-all duration-500"
                                     >
                                         <div
                                             className="w-1/12"

@@ -108,7 +108,7 @@ const HadithList = ({ book, chapter, hadiths }) => {
                                                 </span>
                                             </p>
                                             <p
-                                                className='text-4xl text-justify leading-[50px] font-arabic'
+                                                className='text-3xl text-justify leading-[50px] font-arabic'
                                             >
                                                 {hadith?.ar}
                                             </p>

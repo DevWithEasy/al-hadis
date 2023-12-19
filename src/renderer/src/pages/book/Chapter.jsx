@@ -18,7 +18,7 @@ const Chapter = () => {
     const getHadiths = async (bookId, chapterId) => {
         setLoading(true)
         try {
-            const res = await axios.get(`${apiUrl}/api/book/hadith/${bookId}/${chapterId}`)
+            const res = await axios.get(`${apiUrl}/books/hadith/${bookId}/${chapterId}`)
             if (res.data.status === 200) {
                 setHadiths(res.data.data)
                 setLoading(false)
