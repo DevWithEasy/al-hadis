@@ -97,7 +97,6 @@ bookRouter.get('/section/:bookId/:chapterId', async(req, res) => {
 
 bookRouter.get('/hadith/:bookId/:chapterId', async (req, res) => {
     try {
-        const date1 = new Date()
         const sectionQuery = `
             SELECT * 
             FROM section
@@ -135,8 +134,7 @@ bookRouter.get('/hadith/:bookId/:chapterId', async (req, res) => {
 
             hadiths.push({ ...row, hadiths: hadithRows });
         }
-const date2 = new Date()
-console.log(date2-date1);
+
         return res.status(200).json({
             success: true,
             status: 200,
