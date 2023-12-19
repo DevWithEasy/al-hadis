@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BookHeader, BookList, ChapterList, HadithList, HadithListSkalaton } from '../../component/Index';
-import useHadithStore from "../../store/useStore";
+import useHadithStore from "../../store/hadithStore";
 import apiUrl from "../../utils/apiUrl";
 
 // eslint-disable-next-line react/prop-types

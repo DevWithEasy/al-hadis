@@ -1,7 +1,7 @@
 import { BiSearch } from "react-icons/bi";
 import { FaBookOpen } from 'react-icons/fa';
 import { Link } from "react-router-dom";
-import useHadithStore from "../../store/useStore";
+import useHadithStore from "../../store/hadithStore";
 
 
 // eslint-disable-next-line react/prop-types

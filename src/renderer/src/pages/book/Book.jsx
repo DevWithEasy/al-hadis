@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BookHeader, BookList, ChapterList, ChaptersList, ChaptersSkalaton } from '../../component/Index';
-import useHadithStore from "../../store/useStore";
+import useHadithStore from "../../store/hadithStore";
 import apiUrl from "../../utils/apiUrl";
 
 // eslint-disable-next-line react/prop-types
@@ -15,7 +15,7 @@ const Book = () => {
     const getChapters = async (id) => {
         setLoading(true)
         try {
-            const res = await axios.get(`${apiUrl}/api/book/chapter/${id}`)
+            const res = await axios.get(`${apiUrl}/books/chapter/${id}`)
             if (res.data.status === 200) {
                 addChapters(res.data.data)
                 setLoading(false)

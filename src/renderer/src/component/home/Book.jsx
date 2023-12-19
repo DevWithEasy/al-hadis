@@ -28,7 +28,7 @@ const Book = ({ books,open,setOpen }) => {
                 </button>
             </div>
             <div
-                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 py-5"
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5"
             >
                 {books &&
                     // eslint-disable-next-line react/prop-types

@@ -6,7 +6,7 @@ import { PiBooksLight, PiDotsNineBold } from 'react-icons/pi'
 import { NavLink } from 'react-router-dom'
 import GoToModal from '../component/GoToModal'
 import MenuPopup from '../component/MenuPopup'
-import useHadithStore from '../store/useStore'
+import useHadithStore from '../store/hadithStore'
 // import {PiBooksFill} from 'react-icons/li'
 
 

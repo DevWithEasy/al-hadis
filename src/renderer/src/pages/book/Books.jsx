@@ -1,7 +1,7 @@
 import { toBengaliNumber } from "bengali-number";
 import { BiSearch } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import useHadithStore from "../../store/useStore";
+import useHadithStore from "../../store/hadithStore";
 
 const Books = () => {
     const { books } = useHadithStore()
@@ -31,7 +31,7 @@ const Books = () => {
                 </div>
             </div>
             <div
-                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 py-5"
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5"
             >
                 {books &&
                     // eslint-disable-next-line react/prop-types
@@ -39,7 +39,7 @@ const Books = () => {
                         <Link to={`/${book?.book_name}`}
                             // onClick={() => navigate()}
                             key={book._id}
-                            className="w-full p-5 group cursor-pointer bg-white flex justify-between items-center rounded-2xl transition-all duration-500"
+                            className="w-full p-5 group cursor-pointer bg-white flex justify-between items-center md:space-x-5 rounded-2xl transition-all duration-500"
                         >
                             <div
                                 className="w-2/12"

@@ -5,10 +5,14 @@ const hadithStore = (set)=>({
     books : [],
     categories : [],
     chapters : [],
-    addBookSub : (data)=>{
+    addBooks : (data)=>{
         set(()=>({
-            books : data.books,
-            categories : data.categories
+            books : data
+        }))
+    },
+    addCategories : (data)=>{   
+        set(()=>({
+            categories : data
         }))
     },
     addChapters : (data)=>{

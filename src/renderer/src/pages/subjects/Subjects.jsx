@@ -1,10 +1,26 @@
 import { BiSearch } from "react-icons/bi";
-import useHadithStore from "../../store/useStore";
-import { toBengaliNumber } from "bengali-number";
+import useHadithStore from "../../store/hadithStore";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import apiUrl from "../../utils/apiUrl";
+import { useEffect } from "react";
 
 const Subjects = () => {
-    const {categories} = useHadithStore()
+    const {categories,addCategories} = useHadithStore()
+    const getData = async ()=>{
+        try {
+            const res = await axios.get(`${apiUrl}/categories`)
+            if(res.data.status === 200){
+                addCategories(res.data.data)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    useEffect(()=>{
+        getData()
+    },[])
+    console.log(categories)
     return (
         <div
             className="px-2 h-full mx-auto overflow-y-auto"
@@ -31,15 +47,15 @@ const Subjects = () => {
                     </div>
             </div>
             <div
-                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 py-5"
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5"
             >
                 {categories &&
                     // eslint-disable-next-line react/prop-types
-                    categories.map(category =>
+                    categories.map((category,i) =>
                         <Link
                             to={``}
-                            key={category._id}
-                            className="w-full p-5 group cursor-pointer bg-white flex justify-between items-center rounded-2xl transition-all duration-500"
+                            key={i}
+                            className="w-full p-4 group cursor-pointer bg-white flex justify-between items-center md:space-x-4 rounded-2xl transition-all duration-500"
                         >
                             <div
                                 className="w-2/10 md:w-3/12"
@@ -57,9 +73,6 @@ const Subjects = () => {
                                     className="group-hover:text-[#2b9e76] font-medium"
                                 >
                                     {category?.bn}
-                                </p>
-                                <p className="text-gray-500 text-sm">
-                                    হাদিসের রেঞ্জ: {toBengaliNumber(category?.number_of_hadis)}
                                 </p>
                             </div>
                         </Link>

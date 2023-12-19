@@ -1,9 +1,14 @@
 import bookRouter from "./bookRouter";
+import categoryRouter from "./categoryRouter";
 
 const routes = [
     {
         path: '/books',
         handler: bookRouter
+    },
+    {
+        path: '/categories',
+        handler: categoryRouter
     },
     {
         path: '/',
