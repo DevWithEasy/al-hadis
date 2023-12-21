@@ -7,6 +7,7 @@ import { Book, Head } from "../component/Index";
 import useHadithStore from "../store/hadithStore";
 import apiUrl from "../utils/apiUrl";
 
+
 const Home = () => {
     const [open,setOpen] = useState(false)
     const {books,addBooks} = useHadithStore()
@@ -24,6 +25,7 @@ const Home = () => {
     useEffect(()=>{
         getData()
     },[])
+
     
     return (
         <div

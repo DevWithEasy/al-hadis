@@ -19,7 +19,7 @@ applyRoutes(server)
 errorHandler(server)
 
 //create server
-server.listen(9999,()=> console.log('Sever i running'))
+const serverInstance = server.listen(9999,()=> console.log('Sever i running'))
 
 app.whenReady().then(() => {
   electronApp.setAppUserModelId('com.electron')
@@ -34,8 +34,18 @@ app.whenReady().then(() => {
   })
 })
 
+// Close server before quitting app
+app.on('before-quit', () => {
+  serverInstance.close((err) => {
+    if (err) {
+      console.error('Error closing Express server:', err);
+    }
+    app.quit();
+  });
+});
+
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
-    app.quit()
+    app.quit();
   }
-})
+});

@@ -7,7 +7,7 @@ import { join } from 'path';
 const extactDBFile = () => {
     //zip db file
     const zippedDbFile = join(app.getAppPath(), 'resources', 'db.7z')
-    const dbDirectory = join(app.getAppPath(), 'src', 'main', 'server', 'database')
+    const dbDirectory = join(app.getPath('userData'), 'database')
 
     if (!fs.existsSync(dbDirectory)) {
 

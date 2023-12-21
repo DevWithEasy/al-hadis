@@ -6,9 +6,9 @@ import con from 'sqlite3'
 
 const sqlite3 = con.verbose()
 
-const dbDirectory = join(app.getAppPath(), 'src', 'main', 'server', 'database')
+const dbDirectory = join(app.getAppPath(), 'resources', 'database')
 
-const mainFilePath = join(app.getAppPath(), 'src', 'main', 'server', 'database', 'hadith_bn.db')
+const mainFilePath = join(app.getPath('userData'),'database', 'hadith_bn.db')
 
 const demoFilePath = join(app.getAppPath(), 'resources', 'hadith_bn.db')
 
